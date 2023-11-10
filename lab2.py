@@ -131,8 +131,8 @@ def main():
         L3.append(Point_3(random.random(), random.random(), random.random()))
 
     figs = []
-    obj1 = MyObject(vertices=L2, color=(1, 0, 1))
-    figs.append(obj1)
+    # obj1 = MyObject(vertices=L2, color=(1, 0, 1))
+    # figs.append(obj1)
     obj2 = MyObject(vertices=L3, color=(1, 0, 1))
     figs.append(obj2)
 
