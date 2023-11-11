@@ -201,17 +201,15 @@ class Viewer(QGLViewer):
                     screen_pos = self.project_to_screen(vertex)
                     if abs(screen_pos[0] - event.x()) < 10 and abs(screen_pos[1] - (self.height() - event.y())) < 10:
                         self.selected_vertex_index = i
+                        self.mouse_x = event.x()
+                        self.mouse_y = event.y()
                         print(f"Point selected event: ({self.points[self.selected_vertex_index]})")
                         break
 
     def mouseMoveEvent(self, event):
         if self.selected_vertex_index is not None:
             # print(f"Mouse move event: ({event.x()}, {event.y()})")
-            if self.flag:
-                self.flag = False
-                self.mouse_x = event.x()
-                self.mouse_y = event.y()
-                # If a vertex is selected, update its coordinates based on mouse movement
+            # If a vertex is selected, update its coordinates based on mouse movement
             delta_x = event.x() - self.mouse_x
             delta_y = self.mouse_y - event.y()
             print("delta_x ", delta_x)
