@@ -79,7 +79,7 @@ def triangulate(
 
     # Create input polyhedron
     # polyhedron = Polyhedron_3(tempfile.name)
-    meshi o.write(output, *input_meshes, file_format="off")
+    meshio.write(output, *input_meshes, file_format="off")
     polyhedron = Polyhedron_3(input)
     polyhedrons.append(polyhedron)
 
